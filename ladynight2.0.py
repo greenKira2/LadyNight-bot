@@ -1026,4 +1026,4 @@ async def auto_weekly_report():
 
 # Run the bot
 if __name__ == "__main__":
-    bot.run("TOKEN")
+    bot.run(TOKEN)
