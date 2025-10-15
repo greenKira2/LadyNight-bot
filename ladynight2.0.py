@@ -10,7 +10,7 @@ from typing import Optional, List, Dict, Any
 # ==================== CONFIGURATION ====================
 # ! IMPORTANT: REPLACE WITH YOUR ACTUAL MONGO DB CONNECTION STRING
 # ! IMPORTANT: REPLACE WITH YOUR BOT TOKEN 
-TOKEN= os.getenv("TOKEN")
+TOKEN= os.getenv("BOT_TOKEN")
 MONGO_URI= os.getenv("MONGO_URI")
 DEFAULT_PREFIX = "ln."
 DATA_DIR = "data" # Still used for the migration logic (if needed)
