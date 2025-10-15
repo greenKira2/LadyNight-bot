@@ -1,1 +1,1 @@
-discors.py pymongo motor
+discord.py pymongo motor
