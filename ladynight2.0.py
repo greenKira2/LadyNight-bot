@@ -9,8 +9,7 @@ from typing import Optional, List, Dict, Any
 
 # ==================== CONFIGURATION ====================
 # ! IMPORTANT: REPLACE WITH YOUR ACTUAL MONGO DB CONNECTION STRING
-# ! IMPORTANT: REPLACE WITH YOUR BOT TOKEN 
-TOKEN= os.getenv("BOT_TOKEN")
+# ! IMPORTANT: REPLACE WITH YOUR BO
 MONGO_URI= os.getenv("MONGO_URI")
 DEFAULT_PREFIX = "ln."
 DATA_DIR = "data" # Still used for the migration logic (if needed)
@@ -1016,4 +1015,4 @@ async def auto_weekly_report():
 
 # Run the bot
 if __name__ == "__main__":
-    bot.run(TOKEN)
+    bot.run(os.getenv("BOT_TOKEN"))
