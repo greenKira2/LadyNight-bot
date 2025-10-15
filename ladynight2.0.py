@@ -10,7 +10,18 @@ from typing import Optional, List, Dict, Any
 # ==================== CONFIGURATION ====================
 # ! IMPORTANT: REPLACE WITH YOUR ACTUAL MONGO DB CONNECTION STRING
 # ! IMPORTANT: REPLACE WITH YOUR BO
-MONGO_URI= os.getenv("MONGO_URI")
+MONGO_URI = os.getenv("MONGO_URI")
+TOKEN = os.getenv("BOT_TOKEN")
+if not TOKEN:
+    print("❌ CRITICAL RENDER ERROR: TOKEN variable is empty/None.")
+    # Use a dummy invalid token to prevent a Python crash, but still allow a LoginFailure error
+    # This ensures a message appears in the Render log.
+    TOKEN = "INVALID_RENDER_TOKEN_CHECK" 
+else:
+    # Print the first and last characters of the token to confirm it's loaded
+    print(f"✅ RENDER TOKEN LOADED. Start: {TOKEN[:5]}, End: {TOKEN[-5:]}")
+# 🚨 END DEBUGGING 🚨
+
 DEFAULT_PREFIX = "ln."
 DATA_DIR = "data" # Still used for the migration logic (if needed)
 
@@ -1015,4 +1026,4 @@ async def auto_weekly_report():
 
 # Run the bot
 if __name__ == "__main__":
-    bot.run(os.getenv("BOT_TOKEN"))
+    bot.run(TOKEN)
